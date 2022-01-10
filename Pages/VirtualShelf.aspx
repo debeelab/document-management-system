@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Secretary.master" AutoEventWireup="true" CodeFile="VirtualShelf.aspx.cs" Inherits="Masterpages_Default" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Secretary.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_3lagskig" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -19,7 +19,8 @@
       </div><!-- /.container-fluid -->
     </section>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
     <asp:Panel ID="pnlVirtualshelf" runat="server" Style="padding-left:7.5px">
         <div class="row">
             <div class="col-md-12">
@@ -91,18 +92,14 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Action">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="btnEdit" runat="server" CommandArgument='<%# Eval("FILEID") %>' CommandName="Edit" CssClass="btn btn-primary"><span class="glyphicon glyphicon-pencil">&nbsp;Edit</span></asp:LinkButton>
-
-                                    </ItemTemplate>
-
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Delete">
-                                    <ItemTemplate>
-                                        <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-danger" CommandArgument='<%# Eval("FILEID") %>' CommandName="Delete"><span class="glyphicon glyphicon-trash">&nbsp;Delete</span></asp:LinkButton>
-
-                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="btnEdit" runat="server" CommandArgument='<%# Eval("FILEID") %>' CommandName="Edit" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-folder"></i> Edit
+                                            </asp:LinkButton><asp:LinkButton ID="lnkbtnReject" runat="server" CommandArgument='<%# Eval("FILEID") %>' CommandName="Delete" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-primary1">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                             </Columns>
 
                         </asp:GridView>

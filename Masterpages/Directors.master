@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Directors.master.cs" Inherits="Masterpages_Admin" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Masterpages_Admin, App_Web_u3wa1i55" %>
 
 <!DOCTYPE html>
 
@@ -116,92 +116,137 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                              <li class="nav-item">
-                                <a href="../Homepage/DirectorHome.aspx" class="nav-link" runat="server" id="dashboardirector" onserverclick="dashboardirector_ServerClick">
+                                <a href="#" class="nav-link" runat="server" id="dashboardirector" onserverclick="dashboardirector_ServerClick">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
-                            <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link" runat="server" id="CreateMemo">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Create New Memo
+                            <li class="nav-item">
+                                <a href="../Addons/ADM_Department.aspx" class="nav-link" runat="server" id="addDepart">
+                                    <i class="nav-icon fas fa-file"></i>
+                                    <p>Department</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Addons/ADM_Users.aspx" class="nav-link" runat="server" id="addUser">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create Users</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" runat="server" id="CreateMemo">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Create New Memo
                                     <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                             <ul class="nav nav-treeview">
-                                 <li class="nav-item has-treeview"">
-                                     <a href="~/Memo/Create_Memo.aspx" class="nav-link" runat="server" id="CreateInterMemo">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>
-                                             Internal
-                                         </p>
-                                     </a>
-                                    
-                                 </li>
-                                 <li class="nav-item">
-                                     <a href="~/Memo/InterMemo.aspx" class="nav-link" runat="server" id="CreateExternalMemo">
-                                         <i class="far fa-circle nav-icon"></i>
-                                         <p>External/ Service Provider</p>
-                                     </a>
-                                 </li>
-                                  <li class="nav-item">
-                                      <a id="sentmemo" href="~/Pages/Sent_Memo.aspx" class="nav-link" runat="server">
-                                          <i class="far fa-circle nav-icon"></i>
-                                          <p>
-                                              Outgoing Memo
-                                          </p>
-                                      </a>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="~/Memo/Create_Memo.aspx" class="nav-link" runat="server" id="CreateInterMemo">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Create New Internal Memo
+                                            </p>
+                                        </a>
 
-                                  </li>
-                                
-                             </ul>
-                        </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="~/Memo/externalMemo.aspx" class="nav-link" runat="server" id="CreateExternalMemo">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>External/Service Provider</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="sentmemo" href="~/Pages/Sent_Memo.aspx" class="nav-link" runat="server">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Outgoing Memo
+                                            </p>
+                                        </a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="~/Homepage/Dispatch.aspx" class="nav-link" runat="server" id="dispatchmemo">
+                                    <i class="nav-icon fas fa-book"></i>
+                                    <p>
+                                        Dispatch Type
+                                    <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="~/Pages/Dispatch.aspx" class="nav-link" runat="server" ID="lnksameoffice">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>Within Same Office</p>
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="~/Homepage/Dispatch.aspx" class="nav-link" runat="server" ID="lnkbtnanotheroffice">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>To Another Office</p>
+                                        </asp:LinkButton>
+                                    </li>
+
+                                </ul>
+
+                            </li>
                             <%--<li class="nav-item">
                                 <a href="../Memo/viewAssignedMemo.aspx" class="nav-link" id="vwDirectorMemo" runat="server">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>View Memo</p>
                                 </a>
                             </li>--%>
-                            <li class="nav-item has-treeview">
-                                <asp:LinkButton class="nav-link"  runat="server" ID="vwDirectorMemo" >
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link" runat="server" ID="vwDirectorMemo">
                                          <i class="nav-icon fa fa-envelope"></i>
                                          <p>
                                              View Memo
                                              <i class="right fas fa-angle-left"></i>
                                          </p>
-                                     </asp:LinkButton>
+                                </asp:LinkButton>
                                 <ul class="nav nav-treeview">
-                                 <li class="nav-item has-treeview"">
-                                     <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkUntreated" >
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkUntreated">
                                          <i class="far fa-circle nav-icon"></i>
                                          <p>
                                              Untreated
                                          </p>
-                                     </asp:LinkButton>
-                                    
-                                 </li>
-                                 <li class="nav-item">
-                                     <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkTreated" >
+                                        </asp:LinkButton>
+
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkTreated">
                                          <i class="far fa-circle nav-icon"></i>
                                          <p>Treated</p>
-                                     </asp:LinkButton>
-                                 </li>
-                                  <li class="nav-item">
-                                      <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkvwAll" >
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="lnkvwAll">
                                          <i class="far fa-circle nav-icon"></i>
                                          <p>View All</p>
-                                     </asp:LinkButton>
+                                        </asp:LinkButton>
 
-                                  </li>    
-                             </ul>
-                                 </li>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:LinkButton PostBackUrl="../Memo/view.aspx" class="nav-link" runat="server" ID="LinkButton2">
+                                         <i class="far fa-circle nav-icon"></i>
+                                         <p>View</p>
+                                        </asp:LinkButton>
+
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="nav-item">
-                                <a href="../Views/vwAssignedmemo.aspx" class="nav-link">
-                                    <i class="nav-icon fas fa-file"></i>
-                                    <p>Others</p>
+                                <a href="../Pages/VirtualShelf.aspx" class="nav-link" runat="server" id="virtual_shelf">
+                                    <i class="nav-icon fas fa-book"></i>
+                                    <p>Virtual Shelf</p>
                                 </a>
                             </li>
+
 
                         </ul>
                     </nav>

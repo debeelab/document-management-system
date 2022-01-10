@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Directors.master" AutoEventWireup="true" CodeFile="ChangePassword.aspx.cs" Inherits="Masterpages_Default" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Directors.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_eth4qio2" %>
 <%@ MasterType VirtualPath="~/Masterpages/Directors.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

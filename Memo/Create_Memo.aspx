@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Secretary.master" AutoEventWireup="true" CodeFile="Create_Memo.aspx.cs" Inherits="Masterpages_Default" ValidateRequest="false" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Secretary.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_shfeyxfg" validaterequest="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -28,13 +28,13 @@
     </section>
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <section class="content">
          <div class="row">
              <div class="col-md-12">
                  <div class="card card-dark">
                      <div class="card-header">
-                         <h3 class="card-title">Create New Memo</h3>
+                         <h3 class="card-title">Create New File/Document</h3>
                      </div>
                      <!-- /.card-header -->
                      <!-- form start -->

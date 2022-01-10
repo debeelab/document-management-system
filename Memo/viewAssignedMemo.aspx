@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Directors.master" AutoEventWireup="true" CodeFile="viewAssignedMemo.aspx.cs" Inherits="Masterpages_Default" ValidateRequest="false" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Directors.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_yciumzpf" validaterequest="false" %>
 
 
 <%@ MasterType VirtualPath="~/Masterpages/Directors.master" %>
@@ -8,145 +8,150 @@
      <%--<link href="../dist/css/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
          <script src="../dist/css/bootstrap/3.3.7/bootstrap.min.js"></script>  --%>
     <script src="../dist/libs/jquery/2.1.1/jquery.min.js"></script>
-  
-     <style type="text/css">
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Open Sans", sans-serif
-    }
-    /*.modal-content {
+    <style type="text/css">
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Open Sans", sans-serif;
+        }
+        /*.modal-content {
         background-color: #fefefe;
         margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered *
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size *
 
     }*/
-    .alert-primary {
-        color: #004085 !important;
-        background-color: #cce5ff !important;
-        border-color: #b8daff !important
-    }
+        .alert-primary {
+            color: #004085 !important;
+            background-color: #cce5ff !important;
+            border-color: #b8daff !important;
+        }
 
-    .alert-primary hr {
-        border-top-color: #9fcdff
-    }
+            .alert-primary hr {
+                border-top-color: #9fcdff;
+            }
 
-    .alert-primary .alert-link {
-        color: #002752 !important
-    }
+            .alert-primary .alert-link {
+                color: #002752 !important;
+            }
 
-    .alert-secondary {
-        color: #383d41 !important;
-        background-color: #e2e3e5 !important;
-        border-color: #d6d8db !important
-    }
+        .alert-secondary {
+            color: #383d41 !important;
+            background-color: #e2e3e5 !important;
+            border-color: #d6d8db !important;
+        }
 
-    .alert-secondary hr {
-        border-top-color: #c8cbcf !important
-    }
+            .alert-secondary hr {
+                border-top-color: #c8cbcf !important;
+            }
 
-    .alert-secondary .alert-link {
-        color: #202326 !important
-    }
+            .alert-secondary .alert-link {
+                color: #202326 !important;
+            }
 
-    .alert-success {
-        color: #155724 !important;
-        background-color: #d4edda !important;
-        border-color: #c3e6cb !important
-    }
+        .alert-success {
+            color: #155724 !important;
+            background-color: #d4edda !important;
+            border-color: #c3e6cb !important;
+        }
 
-    .alert-success hr {
-        border-top-color: #b1dfbb !important
-    }
+            .alert-success hr {
+                border-top-color: #b1dfbb !important;
+            }
 
-    .alert-success .alert-link {
-        color: #0b2e13 !important
-    }
+            .alert-success .alert-link {
+                color: #0b2e13 !important;
+            }
 
-    .alert-info {
-        color: #0c5460 !important;
-        background-color: #d1ecf1 !important;
-        border-color: #bee5eb !important
-    }
+        .alert-info {
+            color: #0c5460 !important;
+            background-color: #d1ecf1 !important;
+            border-color: #bee5eb !important;
+        }
 
-    .alert-info hr {
-        border-top-color: #abdde5 !important
-    }
+            .alert-info hr {
+                border-top-color: #abdde5 !important;
+            }
 
-    .alert-info .alert-link {
-        color: #062c33 !important
-    }
+            .alert-info .alert-link {
+                color: #062c33 !important;
+            }
 
-    .alert-warning {
-        color: #856404 !important;
-        background-color: #fff3cd !important;
-        border-color: #ffeeba !important
-    }
+        .alert-warning {
+            color: #856404 !important;
+            background-color: #fff3cd !important;
+            border-color: #ffeeba !important;
+        }
 
-    .alert-warning hr {
-        border-top-color: #ffe8a1 !important
-    }
+            .alert-warning hr {
+                border-top-color: #ffe8a1 !important;
+            }
 
-    .alert-warning .alert-link {
-        color: #533f03 !important
-    }
+            .alert-warning .alert-link {
+                color: #533f03 !important;
+            }
 
-    .alert-danger {
-        color: #721c24 !important;
-        background-color: #f8d7da !important;
-        border-color: #f5c6cb !important
-    }
+        .alert-danger {
+            color: #721c24 !important;
+            background-color: #f8d7da !important;
+            border-color: #f5c6cb !important;
+        }
 
-    .alert-danger hr {
-        border-top-color: #f1b0b7 !important
-    }
+            .alert-danger hr {
+                border-top-color: #f1b0b7 !important;
+            }
 
-    .alert-danger .alert-link {
-        color: #491217 !important
-    }
+            .alert-danger .alert-link {
+                color: #491217 !important;
+            }
 
-    .alert-light {
-        color: #818182 !important;
-        background-color: #fefefe !important;
-        border-color: #fdfdfe !important
-    }
+        .alert-light {
+            color: #818182 !important;
+            background-color: #fefefe !important;
+            border-color: #fdfdfe !important;
+        }
 
-    .alert-light hr {
-        border-top-color: #ececf6 !important
-    }
+            .alert-light hr {
+                border-top-color: #ececf6 !important;
+            }
 
-    .alert-light .alert-link {
-        color: #686868 !important
-    }
+            .alert-light .alert-link {
+                color: #686868 !important;
+            }
 
-    .alert-dark {
-        color: #1b1e21 !important;
-        background-color: #d6d8d9 !important;
-        border-color: #c6c8ca !important
-    }
+        .alert-dark {
+            color: #1b1e21 !important;
+            background-color: #d6d8d9 !important;
+            border-color: #c6c8ca !important;
+        }
 
-    .alert-dark hr {
-        border-top-color: #b9bbbe !important
-    }
+            .alert-dark hr {
+                border-top-color: #b9bbbe !important;
+            }
 
-    .alert-dark .alert-link {
-        color: #040505 !important
-    }
+            .alert-dark .alert-link {
+                color: #040505 !important;
+            }
 
-    .note-editor.note-frame {
-        border: none !important
-    }
+        .note-editor.note-frame {
+            border: none !important;
+        }
 
-    .err-msg {
-        font-weight: 400;
-        color: #a90000;
-        font-size: 13px
-    }
+        .err-msg {
+            font-weight: 400;
+            color: #a90000;
+            font-size: 13px;
+        }
+        .table:not(.table-dark) {
+            color: #000;
+        }
+        .modal-body p {
+            color: #000;
+        }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -303,126 +308,104 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- The time line -->
-                    
-                            <div class="timeline timeline-inverse">
-                                <div id="divsent" runat="server">
-                                    <i class="fa fa-send bg-dark"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fas fa-clock"></i>
-                                            <asp:Label ID="lblDateCreated" runat="server" Text='<%#Eval("DateCreated")%>'></asp:Label></span>
-                                        <h3 class="timeline-header"><a href="#">
-                                            <asp:Label ID="lblSender" runat="server" Text='<%#Eval("DepartmentfromID")%>'></asp:Label></a> sent you a memo</h3>
+                    <div class="timeline timeline-inverse">
+                        <div id="divsent" runat="server">
+                            <i class="fa fa-send bg-dark"></i>
+                            <div class="timeline-item">
+                                <span class="time"><i class="fas fa-clock"></i>
+                                    <asp:Label ID="lblDateCreated" runat="server" Text='<%#Eval("DateCreated")%>'></asp:Label></span>
+                                <h3 class="timeline-header"><a href="#">
+                                    <asp:Label ID="lblSender" runat="server" Text='<%#Eval("DepartmentfromID")%>'></asp:Label></a> sent you a memo</h3>
 
-                                        <div class="timeline-body" runat="server">
-                                            <p id="psender" runat="server" innertext='<%#Eval("MemoBody")%>'></p>
+                                <div class="timeline-body" runat="server">
+                                    <p id="psender" runat="server" innertext='<%#Eval("MemoBody")%>'></p>
 
-                                        </div>
+                                </div>
 
-                                        <div class="timeline-footer" id="footerdownload" runat="server">
-                                            <asp:LinkButton ID="lnkbtndwnpath" runat="server" class="text-danger" Text='<%# Eval("UploadPath")  %>' OnClick="lnkbtndwnpath_Click" CommandArgument='<%#Eval("MemoID")%>'>
+                                <div class="timeline-footer" id="footerdownload" runat="server">
+                                    <asp:LinkButton ID="lnkbtndwnpath" runat="server" class="text-danger" Text='<%# Eval("UploadPath")  %>' OnClick="lnkbtndwnpath_Click" CommandArgument='<%#Eval("MemoID")%>'>
                                        <i class="fa fa-paperclip">
                                         </i> Download Attachment</asp:LinkButton>
-                                        </div>
-                                    </div>
-                                </div>
-                                <asp:Repeater ID="rpMessages" runat="server" OnItemDataBound="rpMessages_ItemDataBound">
-                                    <ItemTemplate>
-                                        <div id="divreplied" runat="server">
-                                            <i class="fa fa-reply bg-success-close"></i>
-                                            <div class="timeline-item">
-                                                <span class="time"><i class="fas fa-clock"></i>
-                                                    <asp:Label ID="lblDateTreated" runat="server" Text='<%#Eval("DateTreated")%>'></asp:Label></span>
-                                                <h3 class="timeline-header"><a href="#">
-                                                    <asp:Label ID="lblreplied" runat="server" Text='<%#Eval("SentBy")%>'></asp:Label></a> Replied</h3>
-                                                 
-                                                <div class="timeline-body">
-                                                    <p id="preplied" runat="server" innerhtml='<%#Eval("RepliedMessage")%>'></p>
-
-                                                </div>
-                                                <div class="timeline-footer">
-                                                    <asp:LinkButton ID="lnkgetdownloadreplied" runat="server" class="text-danger" Text='<%#DataBinder.Eval(Container.DataItem, "Fileupdpath")  %>' OnClick="lnkgetdownloadreplied_Click" >
-                                                        <i class="fa fa-paperclip"></i> Download Attachment
-                                                    </asp:LinkButton>
-                                                    <%--<asp:LinkButton ID="lnkgetdownloadreplied" runat="server" class="text-danger" Text='<%# Eval("Uploadpath")  %>' OnClick="lnkgetdownloadreplied_Click" CommandArgument='<%#Eval("MemoID")%>'>
-                                                        <i class="fa fa-paperclip"></i> Download Attachment</asp:LinkButton>--%>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-
-                                    </ItemTemplate>
-                                </asp:Repeater>
-
-                                
-                                <%--<div id="divresponse" runat="server">
-                                    <i class="fa fa-share bg-danger"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fas fa-clock"></i>
-                                            <asp:Label ID="lbldaterespondedto" runat="server" Text='<%#Eval("DateTreated")%>'></asp:Label></span>
-                                        <h3 class="timeline-header"><a href="#">
-                                            <asp:Label ID="lblreponse" runat="server" Text='<%#Eval("SentBy")%>'></asp:Label></a> Response</h3>
-
-                                        <div class="timeline-body">
-                                            <p id="presponse" runat="server" innertext='<%#Eval("RepliedMessage")%>'></p>
-
-                                        </div>
-                                        <div class="timeline-footer">
-                                            <asp:LinkButton ID="lnkresponse1" runat="server" class="text-danger" Text='<%# Eval("FileUploadPath")  %>' OnClick="lnkresponse1_Click" CommandArgument='<%#Eval("MemoID")%>'> 
-                                        <i class="fa fa-paperclip">
-                                        </i> Download Attachment</asp:LinkButton>
-                                        </div>
-                                    </div>
-
-                                </div>--%>
-
-                                <!-- timeline item -->
-                                <div>
-                                    <i class="fa fa-send bg-dark"></i>
-                                    <div class="timeline-item">
-                                        <span class="time"><i class="fas fa-clock"></i><%: DateTime.Now %> </span>
-                                        <h3 class="timeline-header"><a href="#">Reply</a></h3>
-                                        <div class="timeline-body">
-                                            <div class="mb-3">
-                                                <label for="message">
-                                                    Message
-                                                     <span class="text-danger">*</span>
-
-                                                </label>
-                                                <textarea id="txtreplymemo" class="summernote" runat="server" required="required"></textarea>
-
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message" class="col-sm-2 col-form-label">
-                                                    Attachment
-                                            <span class="text-danger"><i class="fa fa-paperclip"></i></span>
-
-                                                </label>
-                                                <div class="col-sm-10">
-
-                                                    <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-control" />
-
-                                                    <asp:Label ID="label1" runat="server" Text="Label" Visible="False"></asp:Label>
-
-                                                    <asp:TextBox ID="txtfileName" runat="server" Visible="false"></asp:TextBox>
-                                                    <p class="help-block"><b>File Type:</b> jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx | <b>Max file size:</b> 5MB</p>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="timeline-footer">
-                                            <%--<asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" class="btn btn-danger btn-lg" OnClientClick="GetResponse ();" /><asp:Label ID="lblresult" runat="server"></asp:Label>--%>
-                                            <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" class="btn btn-danger btn-lg" OnClientClick="GetResponse ();" />
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <i class="fas fa-clock bg-gray"></i>
                                 </div>
                             </div>
+                        </div>
+                        <asp:Repeater ID="rpMessages" runat="server" OnItemDataBound="rpMessages_ItemDataBound">
+                            <ItemTemplate>
+                                <div id="divreplied" runat="server">
+                                    <i class="fa fa-reply bg-success-close"></i>
+                                    <div class="timeline-item">
+                                        <span class="time"><i class="fas fa-clock"></i>
+                                            <asp:Label ID="lblDateTreated" runat="server" Text='<%#Eval("DateTreated")%>'></asp:Label></span>
+                                        <h3 class="timeline-header"><a href="#">
+                                            <asp:Label ID="lblreplied" runat="server" Text='<%#Eval("SentBy")%>'></asp:Label></a> Replied</h3>
+
+                                        <div class="timeline-body">
+                                            <p id="preplied" runat="server" innerhtml='<%#Eval("RepliedMessage")%>'></p>
+
+                                        </div>
+                                        <div class="timeline-footer">
+                                            <asp:LinkButton ID="lnkgetdownloadreplied" runat="server" class="text-danger" Text='<%#DataBinder.Eval(Container.DataItem, "Fileupdpath")  %>' OnClick="lnkgetdownloadreplied_Click">
+                                                        <i class="fa fa-paperclip"></i> Download Attachment
+                                            </asp:LinkButton>
+                                            <%--<asp:LinkButton ID="lnkgetdownloadreplied" runat="server" class="text-danger" Text='<%# Eval("Uploadpath")  %>' OnClick="lnkgetdownloadreplied_Click" CommandArgument='<%#Eval("MemoID")%>'>
+                                                        <i class="fa fa-paperclip"></i> Download Attachment</asp:LinkButton>--%>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </ItemTemplate>
+                        </asp:Repeater>
+
+                        <!-- timeline item -->
+                        <div>
+                            <i class="fa fa-send bg-dark"></i>
+                            <div class="timeline-item">
+                                <span class="time"><i class="fas fa-clock"></i><%: DateTime.Now %> </span>
+                                <h3 class="timeline-header"><a href="#">Reply</a></h3>
+                                <div class="timeline-body">
+                                    <div class="mb-3">
+                                        <label for="message">
+                                            Message
+                                                     <span class="text-danger">*</span>
+
+                                        </label>
+                                        <%--<asp:TextBox ID="TextBox1" runat="server" class="summernote" ></asp:TextBox>--%>
+                                   <%-- <textarea id="txtreplymemo" class="summernote" runat="server" required="required"></textarea>--%>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message" class="col-sm-2 col-form-label">
+                                            Attachment
+                                            <span class="text-danger"><i class="fa fa-paperclip"></i></span>
+
+                                        </label>
+                                        <div class="col-sm-10">
+
+                                            <asp:FileUpload ID="fileUploadImage" runat="server" CssClass="form-control" />
+
+                                            <asp:Label ID="label1" runat="server" Text="Label" Visible="False"></asp:Label>
+
+                                            <asp:TextBox ID="txtfileName" runat="server" Visible="false"></asp:TextBox>
+                                            <p class="help-block"><b>File Type:</b> jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx | <b>Max file size:</b> 5MB</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="timeline-footer">
+                                    
+                                    <asp:Button ID="btnSend" runat="server" Text="Send" OnClick="btnSend_Click" class="btn btn-danger btn-lg"/>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock bg-gray"></i>
+                        </div>
+                    </div>
 
                       
                    
@@ -431,7 +414,7 @@
                 </div>
                 <!-- /.col -->
             </div>
-
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         </asp:Panel>
 
         <asp:Panel ID="PnlvwAllMemo" runat="server">
@@ -482,21 +465,21 @@
                                             <asp:Label ID="lbldepartfrom" runat="server" Text='<%# Eval("From") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Deparment To">
+                                    <%--<asp:TemplateField HeaderText="Deparment To">
                                         <ItemTemplate>
                                             <asp:Label ID="lbldepartTo" runat="server" Text='<%# Eval("To") %>'></asp:Label>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:TemplateField HeaderText="Document Type">
                                         <ItemTemplate>
                                             <asp:Label ID="lbldoctype" runat="server" Text='<%# Eval("Document") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Sender">
+                                  <%--  <asp:TemplateField HeaderText="Sender">
                                         <ItemTemplate>
                                             <asp:Label ID="lblsender" runat="server" Text='<%# Eval("Sentby") %>' ></asp:Label>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:TemplateField HeaderText="Status">
                                         <ItemTemplate>
                                             <asp:Label ID="lblwAllstatus" runat="server" Text='<%# Eval("Status") %>' CssClass="badge badge-danger"></asp:Label>
@@ -672,21 +655,21 @@
                                             <asp:Label ID="lbldepartfrom" runat="server" Text='<%# Eval("DepartmentfromId") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Deparment To">
+                                    <%--<asp:TemplateField HeaderText="Deparment To">
                                         <ItemTemplate>
                                             <asp:Label ID="lbldepartTo" runat="server" Text='<%# Eval("DepartmentToID") %>'></asp:Label>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:TemplateField HeaderText="Document Type">
                                         <ItemTemplate>
                                             <asp:Label ID="lbldoctype" runat="server" Text='<%# Eval("DocumentTypeID") %>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Sender">
+                                    <%--<asp:TemplateField HeaderText="Sender">
                                         <ItemTemplate>
                                             <asp:Label ID="lblsender" runat="server" Text='<%# Eval("CreatedBy") %>'></asp:Label>
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:TemplateField HeaderText="Priority">
                                         <ItemTemplate>
                                             <asp:Label ID="lblUntreatedPriority" runat="server" Text='<%# Eval("PriorityID") %>' CssClass="badge badge-warning"></asp:Label>
@@ -748,7 +731,7 @@
             <!-- /.modal-dialog -->
         </div>
         
-         <div class="modal fade" id="modal-primary1">
+        <%--<div class="modal fade" id="modal-primary1">
             <div class="modal-dialog">
                 <div class="modal-content bg-primary">
                     <div class="modal-header">
@@ -757,7 +740,6 @@
                             <span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <%--<p>Do you really want to close this record? This process cannot be undone</p>--%>
                         <table class="table">
                             <tr>
                                 <td style="border-top:none">
@@ -778,15 +760,13 @@
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         <asp:Button ID="btnSendRejectfile" class="btn btn-primary" runat="server" Text="Send!" OnClick="btnSendRejectfile_Click" />
-                       <%-- <button type="button"  id="Button1" runat="server" onserverclick="savechanges_ServerClick">
-                            </button>--%>
 
                     </div>
                 </div>
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->
-        </div>
+        </div>--%>
     </section>
 
 
@@ -821,8 +801,8 @@
              });
          });
     </script>
-
-<script>
+    
+    <script>
     $(document).ready(function () {
         $(".alert").fadeTo(10000, 500).slideUp(500, function () {
             $(".alert").slideUp(500);

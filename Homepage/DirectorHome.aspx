@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Directors.master" AutoEventWireup="true" CodeFile="DirectorHome.aspx.cs" Inherits="Masterpages_Default" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Directors.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_2wvr2ujv" %>
 
 <%@ MasterType VirtualPath="~/Masterpages/Directors.master" %>
 
@@ -276,6 +276,7 @@
             </div>
 
         </asp:Panel>
+
         <asp:Panel ID="PnlUntreated" runat="server" Visible="false">
             <div class="row">
                 <div class="col-12">
@@ -339,6 +340,7 @@
             </div>
 
         </asp:Panel>
+
         <asp:Panel ID="PnlConfidential" runat="server" Visible="false">
             <div class="row">
                 <div class="col-12">
@@ -398,6 +400,7 @@
             </div>
 
         </asp:Panel>
+
         <asp:Panel ID="PnlViewAll" runat="server" Visible="false">
             <div class="row">
                 <div class="col-12">

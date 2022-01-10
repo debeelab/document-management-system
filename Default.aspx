@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Default" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Default, App_Web_adsf4kk3" %>
 
 
 

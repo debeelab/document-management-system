@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Admin.master" AutoEventWireup="true" CodeFile="AdminHome.aspx.cs" Inherits="Masterpages_Default" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Admin.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_jkvqjxpr" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="../dist/libs/jquery/2.1.1/jquery.min.js"></script>

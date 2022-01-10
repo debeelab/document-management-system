@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masterpages/Directors.master" AutoEventWireup="true" CodeFile="Sent_Memo.aspx.cs" Inherits="Masterpages_Default" ValidateRequest="false" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/Masterpages/Directors.master" autoeventwireup="true" inherits="Masterpages_Default, App_Web_3rs0k1qt" validaterequest="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -6,6 +6,14 @@
  <%--   <link href="../dist/css/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
      <script src="../dist/css/bootstrap/3.3.7/bootstrap.min.js"></script>--%>
     <script src="../dist/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        .table:not(.table-dark) {
+            color: #000;
+        }
+        .modal-body p {
+            color: #000;
+        }
+    </style>
  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -200,6 +208,9 @@
                                 <div class="col-md-12 text-center">
                                     <%-- <asp:Button ID="btnClose" runat="server" Text="Close" OnClick="btnClose_Click" class="btn btn-success-close" data-toggle="modal" data-target="#modal-primary" />--%>
                                     <button type="button" class="btn btn-success-close" data-toggle="modal" data-target="#modal-primary">Close</button>
+                                    <asp:LinkButton ID="lnkbtnReject" runat="server" CommandArgument='<%# Eval("MemoID") %>' CommandName="Reject" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-primary1">
+                                          <i class="fas fa-trash"></i> Reject
+                                    </asp:LinkButton>
 
                                 </div>
 
@@ -222,7 +233,6 @@
 
                             <%--<i class="fas fa-envelope bg-blue"></i>--%>
                             <i class="fa fa-send bg-dark"></i>
-
                             <div class="timeline-item">
                                 <span class="time"><i class="fas fa-clock"></i>
                                     <asp:Label ID="lblDateCreated" Text='<%#Eval("DateCreated")%>' runat="server" /></span>
@@ -288,7 +298,7 @@
 
                         <!-- timeline item -->
                         <div>
-                            <i class="fas fa-envelope bg-blue"></i>
+                            <i class="fa fa-send bg-dark"></i>
                             <div class="timeline-item">
                                 <span class="time"><i class="fas fa-clock"></i><%: DateTime.Now %> </span>
                                 <h3 class="timeline-header"><a href="#">Reply</a></h3>
@@ -448,6 +458,7 @@
                             <tr>
                                 <td style="border-top:none">
                                     <div class="form-group row">
+                                            <asp:Label ID="lblreason" runat="server" Text="Write the reason of Rejection?"></asp:Label>
                                         <div class="col-sm-12">
                                             <asp:TextBox ID="txtremark" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                                         </div>
@@ -473,6 +484,7 @@
         </div>
         <!-- /.container-fluid -->
     </section>
+
     <!-- /.content -->
     <script>
         $(document).ready(function () {

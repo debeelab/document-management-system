@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Masterpages_Admin" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Masterpages_Admin, App_Web_2rojs4dj" %>
 
 <!DOCTYPE html>
 
@@ -88,7 +88,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
                         <a href="../Homepage/AdminHome.aspx" class="d-block">
@@ -109,7 +109,7 @@
                         <li class="nav-item">
                             <a href="../Addons/ADM_Department.aspx" class="nav-link" runat="server" id="addDepart">
                                 <i class="nav-icon fas fa-file"></i>
-                                <p>Department</p>
+                                <p>Create Department</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -139,7 +139,7 @@
                                     
                                  </li>
                                  <li class="nav-item">
-                                     <a href="#" class="nav-link" runat="server" id="CreateExterMemo">
+                                     <a href="~/Memo/externalMemo.aspx" class="nav-link" runat="server" id="CreateExterMemo">
                                          <i class="far fa-circle nav-icon"></i>
                                          <p>External/Service Provider</p>
                                      </a>
@@ -188,12 +188,6 @@
                                 <p>Virtual Shelf</p>
                             </a>
                         </li>
-<%--                        <li class="nav-item">
-                            <a href="~/Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" id="A1">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>View Memo</p>
-                            </a>
-                        </li>--%>
 
                          <li class="nav-item has-treeview">
                                 <asp:LinkButton PostBackUrl="../Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" ID="vwDirectorMemo" >
@@ -224,12 +218,6 @@
                                          <i class="far fa-circle nav-icon"></i>
                                          <p>View All</p>
                                      </asp:LinkButton>
-<%--                                      <a  href="~/Memo/viewAssignedMemo.aspx" class="nav-link" runat="server" id="lnkvwall">
-                                          <i class="far fa-circle nav-icon"></i>
-                                          <p>
-                                              View All
-                                          </p>
-                                      </a>--%>
 
                                   </li>
                                 
